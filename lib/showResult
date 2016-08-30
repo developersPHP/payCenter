@@ -1,0 +1,5 @@
+<?php
+class showResult
+{
+  //此处用于处理请求结果
+}
