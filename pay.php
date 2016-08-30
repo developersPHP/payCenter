@@ -2,10 +2,10 @@
 interface Pay
 {
   //此处是支付的接口
-  protected function sign();
+  public function sign();
   
-  protected function request();
+  public function request();
   
-  protected function show();
+  public function show();
   
 }
