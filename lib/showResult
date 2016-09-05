@@ -1,0 +1,39 @@
+<?php
+namespace PayCenter\lib;
+
+class showResult
+{
+
+    //序列化参数成&key=value格式
+    public static function serializeParam($params) {
+        $sign_str = '';
+        // 排序
+        ksort ( $params );
+        foreach ( $params as $key => $val ) {
+            if ($key == 'signature') {
+                continue;
+            }
+            $sign_str .= sprintf ( "%s=%s&", $key, $val );
+            // $sign_str .= $key . '=' . $val . '&';
+        }
+        return substr ( $sign_str, 0, strlen ( $sign_str ) - 1 );
+    }
+
+    public static function changeStringToArray($str) {
+        $result = array ();
+        if (! empty ( $str )) {
+            $temp = preg_split ( '/&/', $str );
+            if (! empty ( $temp )) {
+                foreach ( $temp as $key => $val ) {
+                    $arr = preg_split ( '/=/', $val, 2 );
+                    if (! empty ( $arr )) {
+                        $k = $arr ['0'];
+                        $v = $arr ['1'];
+                        $result [$k] = $v;
+                    }
+                }
+            }
+        }
+        return $result;
+    }
+}

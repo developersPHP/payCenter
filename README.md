@@ -1,3 +1,2 @@
 # payCenter
-This is a pay center
-you can study some paid methods in order to improve your programming skills.
+This is a pay center,you can use it to complete a payment.
