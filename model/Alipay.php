@@ -15,7 +15,7 @@ class Alipay implements PayInterface
 
     public function __construct(array $data) {
 
-        //引入核心类
+        //引入核心类,目前开发状态
 
         $this->param = $data;
     }
