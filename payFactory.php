@@ -5,7 +5,7 @@ namespace PayCenter;
 use PayCenter\PayCenter;
 class PayFactory extends PayCenter {
 
-    protected function payMethod(PayFactory $obj) {
+    protected function payMethod(PayInterface $obj) {
 
         $payClass = $obj;
         $result = $payClass->doWork();
